@@ -46,8 +46,8 @@ if __name__ == '__main__':
       bend = min(bstart + eval_batch_size, num_eval_examples)
       print('batch size: {}'.format(bend - bstart))
 
-      x_batch = cifar.eval_data.xs[bstart:bend, :]
-      y_batch = cifar.eval_data.ys[bstart:bend]
+      x_batch = cifar.train_data.xs[bstart:bend, :]
+      y_batch = cifar.train_data.ys[bstart:bend]
 
       dict_normal = {model.x_input: x_batch,
                   model.y_input: y_batch}
