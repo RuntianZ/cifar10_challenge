@@ -26,6 +26,11 @@ if __name__ == '__main__':
 
   model = Model(mode='eval')
 
+  saver = tf.train.Saver()
+
+  data_path = config['data_path']
+  cifar = cifar10_input.CIFAR10Data(data_path)
+
   with tf.Session() as sess:
     # Restore the checkpoint
     saver.restore(sess, model_file)
